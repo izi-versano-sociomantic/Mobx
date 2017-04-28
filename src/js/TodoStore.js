@@ -23,6 +23,11 @@ class Todo {
    createTodo(value) {
     this.todos.push( new Todo( value ) )
   }
+
+  clearComplete = () => {
+    const incompleteTodos = this.todos.filter(todo => !todo.complete)
+    this.todos.replace(incompleteTodos)
+  }
 }
 
 var store = window.store = new TodoStore
